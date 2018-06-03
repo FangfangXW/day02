@@ -15,8 +15,8 @@ info=r.urlopen(url.format(city)).read().decode('utf-8','ignore')
 import json
 data=json.loads(info)
 lists=data['list']
-for i in range(0,38,4):
-    temper={'时间':lists[i]['dt_txt'],
+for i in range(0,38,8):
+    temper={'时间':lists[i+3]['dt_txt'],
             '当前温度':lists[i]['main']['temp'],
         '当前时段最高温度为':lists[i]['main']['temp_max'],
         '当前时段最低温度为':lists[i]['main']['temp_min'],
